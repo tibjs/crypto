@@ -17,5 +17,5 @@ if (!Cipher.prototype.setAead) {
     return this.setCCM(options.msgLen!, options.tagLen!, options.aad);
   }
 
-  [Cipher, Decipher].forEach(cls => cls.prototype.setAead = setAead);
+  [Cipher, Decipher].forEach(cls => (cls.prototype.setAead = setAead));
 }

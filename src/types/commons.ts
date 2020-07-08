@@ -3,7 +3,6 @@
  */
 export type Constructor<T> = new (...args: any[]) => T;
 
-
 /**
  * A replacement for `typeof Target` to be used in mixin class definitions.
  * This is a workaround for TypeScript limitation described in
@@ -67,4 +66,4 @@ export type MixinTarget<T extends object> = Constructor<
     //   may not be private or protected.ts(4094)
     [P in keyof T]: T[P];
   }
-  >;
+>;

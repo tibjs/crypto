@@ -31,31 +31,39 @@ export interface CipherBase {
 }
 
 export interface CipherBaseCtor {
-  new(name: string, encrypt: boolean): CipherBase;
+  new (name: string, encrypt: boolean): CipherBase;
 }
 
-export interface Cipher extends CipherBase {
-
-}
+export interface Cipher extends CipherBase {}
 
 export interface CipherCtor extends CipherBaseCtor {
-  new(name: string): Cipher;
+  new (name: string): Cipher;
 }
 
-export interface Decipher extends CipherBase {
-
-}
+export interface Decipher extends CipherBase {}
 
 export interface DecipherCtor extends CipherBaseCtor {
-  new(name: string): Decipher;
+  new (name: string): Decipher;
 }
 
 export interface Encrypt {
-  (name: string, key: Buffer, iv: Buffer, data: Buffer, tagLen?: number): Buffer;
+  (
+    name: string,
+    key: Buffer,
+    iv: Buffer,
+    data: Buffer,
+    tagLen?: number,
+  ): Buffer;
 }
 
 export interface Decrypt {
-  (name: string, key: Buffer, iv: Buffer, data: Buffer, tagOrLen?: number | Buffer): Buffer;
+  (
+    name: string,
+    key: Buffer,
+    iv: Buffer,
+    data: Buffer,
+    tagOrLen?: number | Buffer,
+  ): Buffer;
 }
 
 export interface CipherExports {
@@ -65,5 +73,3 @@ export interface CipherExports {
   encrypt: Encrypt;
   decrypt: Decrypt;
 }
-
-
