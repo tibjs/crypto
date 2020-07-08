@@ -59,9 +59,9 @@
     "!__tests__"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-
   "gypfile": true,
   "browser": {
     "./aead": "./aead-browser.js",
