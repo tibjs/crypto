@@ -1,6 +1,6 @@
 {
   "name": "@artlab/crypto",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The missing crypto module for Node.js. It provides you with a consistent interface across Node.js and the browser.",
   "main": "index.js",
   "types": "index.d.ts",
