@@ -8,7 +8,7 @@
     "node": ">=10.16"
   },
   "scripts": {
-    "prerelease": "cross-env CI=1 npm run clean && npm run build && npm run lint && node scripts/prerelease.js",
+    "prerelease": "cross-env CI=1 npm run test && node scripts/prerelease.js",
     "release": "np",
     "build": "al-tsc",
     "build:full": "npm ci --ignore-scripts && npm run clean && npm run build",
@@ -23,13 +23,13 @@
     "prettier:fix": "npm run prettier:cli -- --write",
     "format": "npm run prettier:fix",
     "clean": "al-clean dist *.tsbuildinfo",
-    "pretest": "npm run clean && npm run build",
+    "pretest": "npm run clean",
     "test": "al-nyc npm run mocha",
     "test:ci": "al-nyc npm run mocha",
     "posttest": "npm run lint",
     "premocha": "npm run build",
-    "preunit": "npm run build",
     "mocha": "al-mocha \"dist/__tests__/**/*.js\"",
+    "preunit": "npm run build",
     "unit": "al-mocha \"dist/__tests__/unit/**/*.js\""
   },
   "author": "ty <towyuan@outlook.com>",
@@ -62,7 +62,6 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "gypfile": true,
   "browser": {
     "./aead": "./aead-browser.js",
     "./aes": "./aes-browser.js",
