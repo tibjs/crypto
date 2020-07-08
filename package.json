@@ -54,9 +54,9 @@
     "np": "^6.3.0",
     "ora": "^4.0.4"
   },
-  "keywords": [],
-  "files": [
-    "!__tests__"
+  "keywords": [
+    "crypto",
+    "crypt"
   ],
   "publishConfig": {
     "access": "public",
