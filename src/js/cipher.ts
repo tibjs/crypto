@@ -1,5 +1,6 @@
 import {assert} from '@artlab/bsert';
-import {AeadOptions, CipherExports} from '../types/cipher';
+import {AeadOptions, CipherExports} from '../types';
+import {decrypt, encrypt, safeEqual} from '../internal/cipher';
 
 const cipher: CipherExports = require('bcrypto/lib/js/cipher');
 
@@ -59,89 +60,19 @@ if (!Mode.prototype.setAead) {
 
   [Cipher, Decipher].forEach(cls => (cls.prototype.setAead = cipherSetAead));
 
-  cipher.encrypt = function encrypt(
+  cipher.encrypt = (
     name: string,
     key: Buffer,
     iv: Buffer,
     data: Buffer,
     tagLen?: number,
-  ): Buffer {
-    const [, mode] = parseName(name);
-    const ctx = new cipher.Cipher(name);
-    ctx.init(key, iv);
-    ctx.setAead({tagLen, msgLen: data.length});
+  ) => encrypt(cipher.Cipher, name, key, iv, data, tagLen);
 
-    return Buffer.concat([
-      ctx.update(data),
-      ctx.final(),
-      isAead(mode) ? ctx.getAuthTag() : Buffer.allocUnsafe(0),
-    ]);
-  };
-
-  cipher.decrypt = function decrypt(
+  cipher.decrypt = (
     name: string,
     key: Buffer,
     iv: Buffer,
     data: Buffer,
     tagOrLen?: number | Buffer,
-  ): Buffer {
-    const [, mode] = parseName(name);
-    const ctx = new cipher.Decipher(name);
-    ctx.init(key, iv);
-
-    if (isAead(mode)) {
-      tagOrLen = tagOrLen ?? 16;
-      assert(tagOrLen, 'tagOrLen is required in aead mode');
-      let tag: Buffer = Buffer.allocUnsafe(0);
-      if (typeof tagOrLen === 'number') {
-        tag = data.slice(-tagOrLen);
-        data = data.slice(0, -tagOrLen);
-      } else if (Buffer.isBuffer(tagOrLen)) {
-        tag = tagOrLen;
-      } else {
-        throw new Error('tagOrLen is invalid');
-      }
-      ctx.setAuthTag(tag);
-    }
-
-    return Buffer.concat([ctx.update(data), ctx.final()]);
-  };
-}
-
-function safeEqual(x: any, y: any, len: number) {
-  let z = 0;
-
-  for (let i = 0; i < len; i++) z |= x[i] ^ y[i];
-
-  return (z - 1) >>> 31;
-}
-
-const modeNames: Record<string, any> = {
-  __proto__: null,
-  ECB: true,
-  CBC: true,
-  CTS: true,
-  XTS: true,
-  CTR: true,
-  CFB: true,
-  OFB: true,
-  GCM: true,
-  CCM: true,
-  EAX: true,
-};
-
-function parseName(name: string) {
-  if (name.length < 5) return [name, 'RAW'];
-
-  const mode = name.substring(name.length - 3);
-
-  if (name[name.length - 4] !== '-' || !modeNames[mode]) return [name, 'RAW'];
-
-  const algo = name.substring(0, name.length - 4);
-
-  return [algo, mode];
-}
-
-function isAead(mode: string) {
-  return ['GCM', 'CCM'].includes(mode.toUpperCase());
+  ) => decrypt(cipher.Decipher, name, key, iv, data, tagOrLen);
 }
