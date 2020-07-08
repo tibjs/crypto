@@ -3,7 +3,7 @@ import {cipher} from '../../cipher';
 import js_cipher from '../../js/cipher';
 import native_cipher from '../../native/cipher';
 import vectors = require('../data/cipher');
-import {CipherExports} from '../../types/cipher';
+import {CipherExports} from '../../types';
 
 describe('cipher', () => {
   describe('patching', function () {
