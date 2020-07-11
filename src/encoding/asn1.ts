@@ -374,52 +374,52 @@ export namespace asn1 {
       return this;
     }
 
-    static decodeBody<T extends Node>(value: Buffer): T {
-      return <T>new this().decodeBody(value);
+    static decodeBody<T = Node>(value: Buffer): T {
+      return <T>(<unknown>new this().decodeBody(value));
     }
 
-    static fromArray<T extends Node>(value: any[]): T {
-      return <T>new this().fromArray(value);
+    static fromArray<T = Node>(value: any[]): T {
+      return <T>(<unknown>new this().fromArray(value));
     }
 
-    static fromNumber<T extends Node>(num: number): T {
-      return <T>new this().fromNumber(num);
+    static fromNumber<T = Node>(num: number): T {
+      return <T>(<unknown>new this().fromNumber(num));
     }
 
-    static fromPEM<T extends Node>(str: string): T {
-      return <T>new this().fromPEM(str);
+    static fromPEM<T = Node>(str: string): T {
+      return <T>(<unknown>new this().fromPEM(str));
     }
 
-    static read<T extends Node>(br: BufferReader, extra?: any): T {
-      return <T>new this().read(br, extra);
+    static read<T = Node>(br: BufferReader, extra?: any): T {
+      return <T>(<unknown>new this().read(br, extra));
     }
 
-    static decode<T extends Node>(data: Buffer, extra?: any): T {
-      return <T>new this().decode(data, extra);
+    static decode<T = Node>(data: Buffer, extra?: any): T {
+      return <T>(<unknown>new this().decode(data, extra));
     }
 
-    static fromHex<T extends Node>(str: string, extra?: any): T {
-      return <T>new this().fromHex(str, extra);
+    static fromHex<T = Node>(str: string, extra?: any): T {
+      return <T>(<unknown>new this().fromHex(str, extra));
     }
 
-    static fromBase64<T extends Node>(str: string, extra?: any): T {
-      return <T>new this().fromBase64(str, extra);
+    static fromBase64<T = Node>(str: string, extra?: any): T {
+      return <T>(<unknown>new this().fromBase64(str, extra));
     }
 
-    static fromString<T extends Node>(str: string, extra?: any): T {
-      return <T>new this().fromString(str, extra);
+    static fromString<T = Node>(str: string, extra?: any): T {
+      return <T>(<unknown>new this().fromString(str, extra));
     }
 
-    static fromJSON<T extends Node>(json: any, extra?: any): T {
-      return <T>new this().fromJSON(json, extra);
+    static fromJSON<T = Node>(json: any, extra?: any): T {
+      return <T>(<unknown>new this().fromJSON(json, extra));
     }
 
-    static fromOptions<T extends Node>(options: any, extra?: any): T {
-      return <T>new this().fromOptions(options, extra);
+    static fromOptions<T = Node>(options: any, extra?: any): T {
+      return <T>(<unknown>new this().fromOptions(options, extra));
     }
 
-    static from<T extends Node>(options: any, extra?: any): T {
-      return <T>new this().from(options, extra);
+    static from<T = Node>(options: any, extra?: any): T {
+      return <T>(<unknown>new this().from(options, extra));
     }
   }
 
