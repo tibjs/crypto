@@ -100,7 +100,12 @@ export namespace openssl {
     q: asn1.Unsigned;
     g: asn1.Unsigned;
 
-    constructor(y: UnsignedValue, p: UnsignedValue, q: UnsignedValue, g: UnsignedValue) {
+    constructor(
+      y: UnsignedValue,
+      p: UnsignedValue,
+      q: UnsignedValue,
+      g: UnsignedValue,
+    ) {
       super();
       this.y = new asn1.Unsigned(y);
       this.p = new asn1.Unsigned(p);
