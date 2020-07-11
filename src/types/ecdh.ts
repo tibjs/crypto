@@ -1,3 +1,5 @@
+import {Curve} from './curve';
+
 export interface ECDHPublicKeyProps {
   x: Buffer;
   y?: Buffer;
@@ -13,7 +15,7 @@ export interface ECDHPrivateKeyJSON
   extends ECDHPublicKeyJSON,
     ECDHPrivateKeyProps {}
 
-export interface ECDH {
+export interface ECDH extends Curve {
   readonly native: number;
   readonly id: string;
   readonly type: string;

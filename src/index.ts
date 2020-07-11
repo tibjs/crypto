@@ -36,3 +36,16 @@ export * from './sha512';
 export * from './shake';
 export * from './shake128';
 export * from './shake256';
+// crypto
+export * from './dsa';
+export * from './rsa';
+export * from './p192';
+export * from './p224';
+export * from './p256';
+export * from './p384';
+export * from './p521';
+export * from './secp256k1';
+export * from './ed448';
+export * from './ed25519';
+// encoding
+export * from './encoding';

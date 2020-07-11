@@ -1,4 +1,5 @@
 import {HashCtor} from './hash';
+import {Curve} from './curve';
 
 /**
  * Asymmetric Digital Signature Algorithms
@@ -39,7 +40,7 @@ interface KeyProps {
   [prop: string]: Buffer;
 }
 
-export interface Asym<PrivateKeyJSON, PublicKeyJSON> {
+export interface Asym<PrivateKeyJSON, PublicKeyJSON> extends Curve {
   id: string;
   algo: string;
 

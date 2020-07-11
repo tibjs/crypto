@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '../internal/assert';
 import {Adsa, RSA, HashCtor} from '../types';
 
 export function extend(asym: RSA): RSA {

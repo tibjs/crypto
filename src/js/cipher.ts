@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '../internal/assert';
 import {AeadOptions, CipherExports} from '../types';
 import {decrypt, encrypt, safeEqual} from '../internal/cipher';
 

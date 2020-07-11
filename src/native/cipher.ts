@@ -1,5 +1,5 @@
 import {AeadOptions, CipherExports} from '../types/cipher';
-import {assert} from '@artlab/bsert';
+import {assert} from '../internal/assert';
 import {decrypt, encrypt} from '../internal/cipher';
 
 const cipher: CipherExports = require('bcrypto/lib/native/cipher');

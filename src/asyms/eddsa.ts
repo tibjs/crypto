@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '../internal/assert';
 import {Adsa, EDDSA, HashCtor} from '../types';
 
 export function extend(asym: EDDSA): EDDSA {

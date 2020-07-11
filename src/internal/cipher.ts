@@ -1,5 +1,5 @@
 import {CipherCtor, DecipherCtor} from '../types';
-import {assert} from '@artlab/bsert';
+import {assert} from '../internal/assert';
 
 export function safeEqual(x: any, y: any, len: number) {
   let z = 0;
@@ -50,12 +50,14 @@ export function encrypt(
   const [, mode] = parseName(name);
   const ctx = new Cipher(name);
   ctx.init(key, iv);
-  ctx.setAead({tagLen, msgLen: data.length});
+  if (tagLen != null) {
+    ctx.setAead({tagLen, msgLen: data.length});
+  }
 
   return Buffer.concat([
     ctx.update(data),
     ctx.final(),
-    isAead(mode) ? ctx.getAuthTag() : Buffer.allocUnsafe(0),
+    isAead(mode) ? ctx.getAuthTag() : Buffer.alloc(0),
   ]);
 }
 
@@ -71,10 +73,9 @@ export function decrypt(
   const ctx = new Decipher(name);
   ctx.init(key, iv);
 
-  if (isAead(mode)) {
-    tagOrLen = tagOrLen ?? 16;
+  if (isAead(mode) && tagOrLen != null) {
     assert(tagOrLen, 'tagOrLen is required in aead mode');
-    let tag: Buffer = Buffer.allocUnsafe(0);
+    let tag: Buffer = Buffer.alloc(0);
     if (typeof tagOrLen === 'number') {
       tag = data.slice(-tagOrLen);
       data = data.slice(0, -tagOrLen);
