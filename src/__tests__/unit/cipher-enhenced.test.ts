@@ -1,48 +1,29 @@
 import {expect} from '@artlab/testlab';
 import {cipher} from '../../cipher';
-import js_cipher from '../../js/cipher';
-import native_cipher from '../../native/cipher';
 import vectors = require('../data/cipher');
 import {CipherExports} from '../../types';
 
 describe('cipher', () => {
   describe('patching', function () {
-    it('should exports native cipher default', function () {
-      expect(native_cipher).equal(cipher);
-    });
-
     it('should patched setAead', function () {
-      expect(js_cipher.Cipher.prototype.setAead).type('function');
-      expect(native_cipher.Cipher.prototype.setAead).type('function');
+      expect(cipher.Cipher.prototype.setAead).type('function');
     });
   });
 
-  describe('js', function () {
-    describe('cipher/decipher', function () {
-      for (const [alg, key, iv, pt, ct, tag, aad] of vectors) {
-        itCipherAndDecipher(js_cipher, alg, key, iv, pt, ct, tag, aad);
-      }
-    });
-
-    describe('encrypt/decrypt', function () {
-      for (const [alg, key, iv, pt, ct, tag] of vectors) {
-        itEncryptAndDecrypt(js_cipher, alg, key, iv, pt, ct, tag);
-      }
-    });
-  });
-
-  describe('native', function () {
-    const vectors_ = vectors.filter(v => v[0].endsWith('CCM'));
+  describe('aead', function () {
+    const vectors_ = cipher.native
+      ? vectors.filter(v => v[0].endsWith('CCM'))
+      : vectors;
 
     describe('cipher/decipher', function () {
       for (const [alg, key, iv, pt, ct, tag, aad] of vectors_) {
-        itCipherAndDecipher(native_cipher, alg, key, iv, pt, ct, tag, aad);
+        itCipherAndDecipher(cipher, alg, key, iv, pt, ct, tag, aad);
       }
     });
 
     describe('encrypt/decrypt', function () {
       for (const [alg, key, iv, pt, ct, tag] of vectors_) {
-        itEncryptAndDecrypt(native_cipher, alg, key, iv, pt, ct, tag);
+        itEncryptAndDecrypt(cipher, alg, key, iv, pt, ct, tag);
       }
     });
   });

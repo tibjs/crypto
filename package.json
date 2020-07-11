@@ -26,7 +26,7 @@
     "clean": "al-clean dist coverage .nyc_output *.tsbuildinfo",
     "pretest": "npm run clean && npm run format",
     "test": "al-nyc npm run mocha",
-    "test:ci": "al-nyc npm run mocha",
+    "test:js": "NODE_BACKEND=js npm run test",
     "posttest": "npm run lint",
     "premocha": "npm run build",
     "mocha": "al-mocha \"dist/__tests__/**/*.js\"",
