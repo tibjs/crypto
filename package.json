@@ -36,7 +36,7 @@
   "author": "ty <towyuan@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@artlab/bufio": "^1.0.3",
+    "@artlab/bufio": "^1.0.4",
     "bcrypto": "git+https://github.com/bcoin-org/bcrypto.git"
   },
   "devDependencies": {
@@ -54,7 +54,7 @@
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.1",
     "mocha": "^8.0.1",
-    "np": "^6.3.1",
+    "np": "^6.3.2",
     "ora": "^4.0.4",
     "typescript": "^3.9.6"
   },
