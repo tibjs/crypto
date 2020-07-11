@@ -10,6 +10,7 @@
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {StaticWriter, BufferReader} from '@artlab/bufio';
+import {UnsignedValue} from './types';
 
 export namespace pkcs3 {
   /**
@@ -20,7 +21,7 @@ export namespace pkcs3 {
     p: asn1.Unsigned;
     g: asn1.Unsigned;
 
-    constructor(p: number, g: number) {
+    constructor(p: UnsignedValue, g: UnsignedValue) {
       super();
       this.p = new asn1.Unsigned(p);
       this.g = new asn1.Unsigned(g);

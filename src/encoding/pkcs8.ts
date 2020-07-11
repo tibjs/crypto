@@ -18,6 +18,7 @@ import {BufferReader, StaticWriter} from '@artlab/bufio';
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {x509} from './x509';
+import {UnsignedValue} from './types';
 
 export namespace pkcs8 {
   /**
@@ -111,7 +112,7 @@ export namespace pkcs8 {
     algorithm: x509.AlgorithmIdentifier;
 
     constructor(
-      version?: number | Buffer,
+      version?: UnsignedValue,
       algorithm?: string | number | Buffer | number[] | Uint32Array,
       parameters?: asn1.Node,
       privateKey?: Buffer,

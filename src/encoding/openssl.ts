@@ -13,6 +13,7 @@
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {StaticWriter, BufferReader} from '@artlab/bufio';
+import {UnsignedValue} from './types';
 
 export namespace openssl {
   /**
@@ -30,7 +31,7 @@ export namespace openssl {
     q: asn1.Unsigned;
     g: asn1.Unsigned;
 
-    constructor(p: number, q: number, g: number) {
+    constructor(p: UnsignedValue, q: UnsignedValue, g: UnsignedValue) {
       super();
       this.p = new asn1.Unsigned(p);
       this.q = new asn1.Unsigned(q);
@@ -99,7 +100,7 @@ export namespace openssl {
     q: asn1.Unsigned;
     g: asn1.Unsigned;
 
-    constructor(y: number, p: number, q: number, g: number) {
+    constructor(y: UnsignedValue, p: UnsignedValue, q: UnsignedValue, g: UnsignedValue) {
       super();
       this.y = new asn1.Unsigned(y);
       this.p = new asn1.Unsigned(p);
@@ -180,12 +181,12 @@ export namespace openssl {
     x: asn1.Unsigned;
 
     constructor(
-      version: number,
-      p: number,
-      q: number,
-      g: number,
-      y: number,
-      x: number,
+      version: UnsignedValue,
+      p: UnsignedValue,
+      q: UnsignedValue,
+      g: UnsignedValue,
+      y: UnsignedValue,
+      x: UnsignedValue,
     ) {
       super();
       this.version = new asn1.Unsigned(version);

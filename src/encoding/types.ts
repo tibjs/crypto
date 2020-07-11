@@ -1,3 +1,5 @@
+export type UnsignedValue = number | Buffer;
+
 export interface Base16 {
   encode(data: Buffer, size?: number | null): string;
   encodeLE(data: Buffer, size?: number | null): string;

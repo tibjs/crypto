@@ -17,6 +17,7 @@
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {StaticWriter, BufferReader} from '@artlab/bufio';
+import {UnsignedValue} from './types';
 
 export namespace sec1 {
   /**
@@ -55,7 +56,7 @@ export namespace sec1 {
     publicKey: asn1.BitString;
 
     constructor(
-      version: number,
+      version: UnsignedValue,
       privateKey: Buffer,
       namedCurveOID?: string | number | Buffer | number[] | Uint32Array,
       publicKey?: number | Buffer,
@@ -149,7 +150,7 @@ export namespace sec1 {
     r: asn1.Unsigned;
     s: asn1.Unsigned;
 
-    constructor(r: number | Buffer, s: number | Buffer) {
+    constructor(r: UnsignedValue, s: UnsignedValue) {
       super();
       this.r = new asn1.Unsigned(r);
       this.s = new asn1.Unsigned(s);

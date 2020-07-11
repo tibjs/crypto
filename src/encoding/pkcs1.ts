@@ -19,6 +19,7 @@
 import {BufferReader, StaticWriter} from '@artlab/bufio';
 import {asn1} from './asn1';
 import {pem} from './pem';
+import {UnsignedValue} from './types';
 
 export namespace pkcs1 {
   /**
@@ -34,7 +35,7 @@ export namespace pkcs1 {
     n: asn1.Unsigned;
     e: asn1.Unsigned;
 
-    constructor(n: number, e: number) {
+    constructor(n: UnsignedValue, e: UnsignedValue) {
       super();
       this.n = new asn1.Unsigned(n);
       this.e = new asn1.Unsigned(e);
@@ -110,15 +111,15 @@ export namespace pkcs1 {
     qi: asn1.Unsigned;
 
     constructor(
-      version: number,
-      n: number,
-      e: number,
-      d: number,
-      p: number,
-      q: number,
-      dp: number,
-      dq: number,
-      qi: number,
+      version: UnsignedValue,
+      n: UnsignedValue,
+      e: UnsignedValue,
+      d: UnsignedValue,
+      p: UnsignedValue,
+      q: UnsignedValue,
+      dp: UnsignedValue,
+      dq: UnsignedValue,
+      qi: UnsignedValue,
     ) {
       super();
       this.version = new asn1.Unsigned(version);
