@@ -69,6 +69,7 @@
   "browser": {
     "./aead": "./aead-browser.js",
     "./aes": "./aes-browser.js",
+    "./arc4": "./arc4-browser.js",
     "./bcrypt": "./bcrypt-browser.js",
     "./blake2b": "./blake2b-browser.js",
     "./blake2s": "./blake2s-browser.js",
@@ -109,7 +110,6 @@
     "./pbkdf2": "./pbkdf2-browser.js",
     "./poly1305": "./poly1305-browser.js",
     "./random": "./random-browser.js",
-    "./rc4": "./rc4-browser.js",
     "./ripemd160": "./ripemd160-browser.js",
     "./rsa": "./rsa-browser.js",
     "./salsa20": "./salsa20-browser.js",
