@@ -7,6 +7,7 @@
 > interface across Node.js and the browser.
 
 ## Installation
+
 ```bash
 $ npm i @artlab/crypto
 ```
