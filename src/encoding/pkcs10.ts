@@ -1,7 +1,7 @@
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {x509} from './x509';
-import {BufferReader, StaticWriter} from '@artlab/bufio';
+import {BufferReader, StaticWriter} from '@tib/bufio';
 
 export namespace pkcs10 {
   /**

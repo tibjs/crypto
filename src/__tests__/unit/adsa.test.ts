@@ -20,7 +20,7 @@ import {SHA3_512} from '../../sha3-512';
 import {BLAKE2b256} from '../../blake2b256';
 import {BLAKE2s256} from '../../blake2s256';
 import {random} from '../../random';
-import {expect} from '@artlab/testlab';
+import {expect} from '@tib/testlab';
 
 const adsables: Asym<any, any>[] = [
   ed448,

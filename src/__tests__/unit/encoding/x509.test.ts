@@ -1,5 +1,5 @@
 import path from 'path';
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {x509} from '../../../encoding/x509';
 import {pem} from '../../../encoding/pem';
 import fs from 'fs';

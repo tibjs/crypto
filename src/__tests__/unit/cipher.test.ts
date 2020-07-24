@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import fs from 'fs';
 import {cipher as c} from '../../cipher';
 import {random as rng} from '../../random';

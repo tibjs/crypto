@@ -29,8 +29,8 @@
  *   https://github.com/golang/go/blob/master/src/encoding/asn1/marshal.go
  */
 
-import * as bio from '@artlab/bufio';
-import {BufferReader, StaticWriter, Struct} from '@artlab/bufio';
+import * as bio from '@tib/bufio';
+import {BufferReader, StaticWriter, Struct} from '@tib/bufio';
 import {oids} from './oids';
 import {assert} from '../internal/assert';
 

@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {sec1} from '../../../encoding/sec1';
 
 const secpPriv =

@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import Path from 'path';
 import fs from 'fs';
 import {dsa} from '../../../dsa';

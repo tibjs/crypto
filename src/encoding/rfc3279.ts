@@ -8,7 +8,7 @@
  *   https://tools.ietf.org/html/rfc5912
  */
 
-import {StaticWriter, BufferReader} from '@artlab/bufio';
+import {StaticWriter, BufferReader} from '@tib/bufio';
 import {asn1} from './asn1';
 import {pem} from './pem';
 

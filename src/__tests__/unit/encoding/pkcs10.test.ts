@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {pem} from '../../../encoding/pem';
 import {pkcs10} from '../../../encoding/pkcs10';
 

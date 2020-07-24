@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {pem, pkcs1} from '../../../encoding';
 import {rsa} from '../../../rsa';
 

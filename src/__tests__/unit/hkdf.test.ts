@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {SHA256} from '../../sha256';
 import {SHA1} from '../../sha1';
 import {hkdf} from '../../hkdf';

@@ -14,7 +14,7 @@
  *   https://github.com/golang/go/blob/master/src/crypto/x509/pkcs8.go
  */
 
-import {BufferReader, StaticWriter} from '@artlab/bufio';
+import {BufferReader, StaticWriter} from '@tib/bufio';
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {x509} from './x509';

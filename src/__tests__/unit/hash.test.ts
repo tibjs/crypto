@@ -1,4 +1,4 @@
-import {expect} from '@artlab/testlab';
+import {expect} from '@tib/testlab';
 import {HashCtor} from '../../types';
 
 import {BLAKE2b160} from '../../blake2b160';

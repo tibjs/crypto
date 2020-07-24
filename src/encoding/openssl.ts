@@ -12,7 +12,7 @@
 
 import {asn1} from './asn1';
 import {pem} from './pem';
-import {StaticWriter, BufferReader} from '@artlab/bufio';
+import {StaticWriter, BufferReader} from '@tib/bufio';
 import {UnsignedValue} from './types';
 
 export namespace openssl {

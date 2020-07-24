@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {pem, pemcrypt} from '../../../encoding';
 
 const txt1 = `

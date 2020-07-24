@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {rfc3279} from '../../../encoding';
 
 const DSA_PARAMS = path.resolve(

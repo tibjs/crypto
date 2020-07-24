@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {pkcs5} from '../../../encoding/pkcs5';
 
 describe('PKCS5', function () {

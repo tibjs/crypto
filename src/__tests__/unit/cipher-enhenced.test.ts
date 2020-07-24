@@ -1,4 +1,4 @@
-import {expect} from '@artlab/testlab';
+import {expect} from '@tib/testlab';
 import {cipher} from '../../cipher';
 import vectors = require('../data/cipher');
 import {CipherExports} from '../../types';

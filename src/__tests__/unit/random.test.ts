@@ -1,4 +1,4 @@
-import {expect} from '@artlab/testlab';
+import {expect} from '@tib/testlab';
 import {random} from '../../random';
 
 describe('Random', function () {

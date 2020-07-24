@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {box} from '../../box';
 import {ecies} from '../../ecies';
 import {x25519} from '../../x25519';

@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {random} from '../../../random';
 import {bech32} from '../../../encoding/bech32';
 

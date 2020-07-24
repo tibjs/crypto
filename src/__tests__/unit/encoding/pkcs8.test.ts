@@ -1,7 +1,7 @@
 import fs from 'fs';
 import Path from 'path';
-import {assert} from '@artlab/bsert';
-import * as bio from '@artlab/bufio';
+import {assert} from '@tib/bsert';
+import * as bio from '@tib/bufio';
 import {asn1} from '../../../encoding/asn1';
 import {pkcs8} from '../../../encoding/pkcs8';
 import {rsa} from '../../../rsa';

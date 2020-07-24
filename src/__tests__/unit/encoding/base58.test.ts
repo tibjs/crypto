@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {base58} from '../../../encoding/base58';
 
 const json = require('../../data/base58.json');

@@ -16,7 +16,7 @@
  *   https://github.com/openssl/openssl/blob/master/crypto/rsa/rsa_asn1.c
  */
 
-import {BufferReader, StaticWriter} from '@artlab/bufio';
+import {BufferReader, StaticWriter} from '@tib/bufio';
 import {asn1} from './asn1';
 import {pem} from './pem';
 import {UnsignedValue} from './types';

@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {ARC4} from '../../arc4';
 
 // https://github.com/golang/go/blob/master/src/crypto/rc4/rc4_test.go

@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import {asn1} from '../../../encoding/asn1';
 
 const oids = [

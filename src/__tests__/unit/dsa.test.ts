@@ -1,5 +1,5 @@
 import {dsa} from '../../dsa';
-import {expect} from '@artlab/testlab';
+import {expect} from '@tib/testlab';
 
 describe('dsa', function () {
   it('should import correctly', function () {

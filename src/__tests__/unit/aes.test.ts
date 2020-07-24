@@ -1,4 +1,4 @@
-import {assert} from '@artlab/bsert';
+import {assert} from '@tib/bsert';
 import fs from 'fs';
 import {aes} from '../../aes';
 

@@ -19,7 +19,7 @@
  *   https://github.com/indutny/asn1.js/blob/master/lib/asn1/decoders/der.js
  */
 
-import {BufferReader, StaticWriter} from '@artlab/bufio';
+import {BufferReader, StaticWriter} from '@tib/bufio';
 import {assert} from '../internal/assert';
 import {asn1} from './asn1';
 import {pem} from './pem';
