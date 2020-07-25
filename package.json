@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "@tib/bufio": "^1.1.0",
-    "bcrypto": "git+ssh://git@github.com/bcoin-org/bcrypto.git"
+    "bcrypto": "git+https://github.com/bcoin-org/bcrypto.git"
   },
   "devDependencies": {
     "@tib/bsert": "^0.2.0",
