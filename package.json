@@ -36,27 +36,27 @@
   "author": "ty <towyuan@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@tib/bufio": "^1.1.0",
-    "bcrypto": "git+https://github.com/bcoin-org/bcrypto.git",
-    "tslib": "^2.0.0"
+    "@tib/bufio": "^1.1.2",
+    "bcrypto": "^5.3.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@tib/bsert": "^0.2.0",
-    "@tib/build": "^6.3.0",
-    "@tib/eslint-config": "^8.2.0",
-    "@tib/testlab": "^3.4.0",
+    "@tib/bsert": "^0.2.1",
+    "@tib/build": "^6.3.4",
+    "@tib/eslint-config": "^8.2.4",
+    "@tib/testlab": "^3.4.4",
     "@types/debug": "^4.1.5",
     "@types/fs-extra": "^9.0.1",
-    "@types/mocha": "^8.0.0",
-    "@types/node": "^14.0.25",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.6.1",
     "chalk": "^4.1.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.2",
     "fs-extra": "^9.0.1",
-    "mocha": "^8.0.1",
-    "np": "^6.3.2",
-    "ora": "^4.0.5",
-    "typescript": "^3.9.7"
+    "mocha": "^8.1.2",
+    "np": "^6.4.0",
+    "ora": "^5.0.0",
+    "typescript": "^4.0.2"
   },
   "keywords": [
     "crypto",
