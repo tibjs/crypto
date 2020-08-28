@@ -62,10 +62,6 @@
     "crypto",
     "crypt"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "browser": {
     "./aead": "./aead-browser.js",
     "./aes": "./aes-browser.js",
