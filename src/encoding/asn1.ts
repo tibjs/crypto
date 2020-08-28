@@ -127,14 +127,19 @@ export namespace asn1 {
    */
 
   export class Node extends Struct {
+    _type: number;
+
     flags: number;
-    type: number;
     raw?: Buffer | null;
     value: any;
 
     constructor() {
       super();
       this.flags = 0;
+    }
+
+    get type(): number {
+      return this._type;
     }
 
     get mode() {
